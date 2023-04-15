@@ -8,7 +8,7 @@ public class MenuManager {
 		
 		while(num != 5) {
 			System.out.println("1. Earning");
-			System.out.println("2. delete");
+			System.out.println("2. Delete");
 			System.out.println("3. Edit Accountbook");
 			System.out.println("4. View Accountbook");
 			System.out.println("5. Exit");
