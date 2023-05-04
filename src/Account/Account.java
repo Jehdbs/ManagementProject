@@ -11,12 +11,23 @@ public class Account {
 	public Account() {
 	}
 	
+	public Account(AccountType kind) {
+		this.kind = kind;
+	}
+	
 	public Account(int amount, String content) {
 		this.amount = amount;
 		this.content = content;
 	}
 	
 	public Account(int number, int amount, String content, String date) {
+		this.number = number;
+		this.amount = amount;
+		this.content = content;
+		this.date = date;
+	}
+	public Account(AccountType kind, int number, int amount, String content, String date) {
+		this.kind  = kind;
 		this.number = number;
 		this.amount = amount;
 		this.content = content;
@@ -64,7 +75,21 @@ public class Account {
 	}
 	
 	public void printInfo() {
-		System.out.println("number : "+number+ "amount : "+amount +" "+ "content : "+content+" " + "date : "+date);
+		String akind = "none";
+		switch(this.kind) {
+		case DAILY:
+			akind = "Daily"; // 디테일 컨텐트
+			break;
+		case FOOD:
+			akind = "Food";
+			break;
+		case STUDY:
+			akind = "Study";
+			break;
+		default :	
+		}
+		System.out.println("kind : "+akind +", "+ "number : "+number+", "+ "amount : "+amount +", "+ "content : "+content+", "
+		+ "date : "+date);
 	}
 	
 	public void getUserInput(Scanner input) {

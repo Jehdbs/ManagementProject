@@ -2,8 +2,8 @@ package Account;
 
 import java.util.Scanner;
 
-public class Food extends Account {
-	public Food(AccountType kind) {
+public class Study extends Account{
+	public Study(AccountType kind) {
 		super(kind);
 	}
 	public void getUserInput(Scanner input) { // 오버라이딩

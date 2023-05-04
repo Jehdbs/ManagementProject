@@ -26,7 +26,6 @@ public class Menumanager2 {
 			else {
 				continue;}
 		}
-
 	}
 }
 

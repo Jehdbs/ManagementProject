@@ -2,11 +2,14 @@ package Account;
 
 import java.util.Scanner;
 
-public class Food extends Account {
-	public Food(AccountType kind) {
+public class Daily extends Account {
+	
+	public Daily(AccountType kind) {
 		super(kind);
 	}
-	public void getUserInput(Scanner input) { // 오버라이딩
+
+	
+	public void getUserInput(Scanner input) { 
 		System.out.print("번호 : ");
 		int number = input.nextInt();
 		this.setNumber(number);
@@ -19,7 +22,7 @@ public class Food extends Account {
 				System.out.print("수익 : ");
 				int amount = input.nextInt();
 				this.setAmount(amount);
-				System.out.print("수익 내용 : ");
+				System.out.print("세부 수익 내용 : ");
 				String content = input.next();
 				this.setContent(content);
 				break;
@@ -36,4 +39,22 @@ public class Food extends Account {
 		String date = input.next();
 		this.setDate(date);
 	}
+	public void printInfo() { 
+		String akind = "none";
+		switch(this.kind) {
+		case DAILY:
+			akind = "Daily"; 
+			break;
+		case FOOD:
+			akind = "Food";
+			break;
+		case STUDY:
+			akind = "Study";
+			break;
+		default :	
+		}
+		System.out.println("kind : "+akind +", "+"number : "+number+", "+ "amount : "+amount +", "
+		+"detail content : "+content+", "+ "date : "+date);
+	}
 }
+
