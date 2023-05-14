@@ -6,7 +6,7 @@ public class Study extends Account implements AccountInput {
 	public Study(AccountType kind) {
 		super(kind);
 	}
-	public void getUserInput(Scanner input) { // 오버라이딩
+	public void getUserInput(Scanner input) { 
 		System.out.print("번호 : ");
 		int number = input.nextInt();
 		this.setNumber(number);
@@ -41,7 +41,7 @@ public class Study extends Account implements AccountInput {
 		String akind = "none";
 		switch(this.kind) {
 		case DAILY:
-			akind = "Daily"; // 디테일 컨텐트
+			akind = "Daily"; 
 			break;
 		case FOOD:
 			akind = "Food";
