@@ -2,7 +2,7 @@ package Account;
 
 import java.util.Scanner;
 
-public class Account {
+public abstract class Account {
 	protected int amount;
 	protected int number;
 	protected String content;
@@ -74,39 +74,6 @@ public class Account {
 		this.date = date;
 	}
 	
-	public void printInfo() {
-		String akind = "none";
-		switch(this.kind) {
-		case DAILY:
-			akind = "Daily"; // 디테일 컨텐트
-			break;
-		case FOOD:
-			akind = "Food";
-			break;
-		case STUDY:
-			akind = "Study";
-			break;
-		default :	
-		}
-		System.out.println("kind : "+akind +", "+ "number : "+number+", "+ "amount : "+amount +", "+ "content : "+content+", "
-		+ "date : "+date);
-	}
+	public abstract void printInfo();
 	
-	public void getUserInput(Scanner input) {
-		System.out.print("번호 : ");
-		int number = input.nextInt();
-		this.setNumber(number);
-		
-		System.out.print("수익 : ");
-		int amount = input.nextInt();
-		this.setAmount(amount);
-		
-		System.out.print("수익 내용 : ");
-		String content = input.next();
-		this.setContent(content);
-		
-		System.out.print("날짜 : ");
-		String date = input.next();
-		this.setDate(date);
-	}
 }

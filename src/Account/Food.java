@@ -2,7 +2,7 @@ package Account;
 
 import java.util.Scanner;
 
-public class Food extends Account {
+public class Food extends Account implements AccountInput {
 	public Food(AccountType kind) {
 		super(kind);
 	}
@@ -35,5 +35,23 @@ public class Food extends Account {
 		System.out.print("날짜 : ");
 		String date = input.next();
 		this.setDate(date);
+	}
+	
+	public void printInfo() {
+		String akind = "none";
+		switch(this.kind) {
+		case DAILY:
+			akind = "Daily"; // 디테일 컨텐트
+			break;
+		case FOOD:
+			akind = "Food";
+			break;
+		case STUDY:
+			akind = "Study";
+			break;
+		default :	
+		}
+		System.out.println("kind : "+akind +", "+ "number : "+number+", "+ "amount : "+amount +", "+ "content : "+content+", "
+		+ "date : "+date);
 	}
 }

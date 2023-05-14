@@ -3,7 +3,9 @@ import java.util.Scanner;
 public class Menumanager2 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+		
 		AccountManager accountManager = new AccountManager(input);  
+		
 		int num = -1;
 		
 		while(num != 5) {
