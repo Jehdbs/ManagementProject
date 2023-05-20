@@ -2,15 +2,20 @@ package Account;
 
 import java.util.Scanner;
 
-public class Daily extends Account {	
-	public Daily(AccountType kind) {
+public abstract class Necesseties extends Account {
+	
+	public Necesseties(AccountType kind) {
 		super(kind);
 	}
 	
-	public void getUserInput(Scanner input) { 
-		setNumber(input);
-		setAccountAmountwithYN(input);		
-		setDate(input);
+	@Override
+	public abstract void getUserInput(Scanner input);
+
+	@Override
+	public void printInfo() {
+		String akind = getKindString();
+		System.out.println("kind : "+akind +", "+"number : "+number+", "+ "amount : "+amount +", "
+		+"detail content : "+content+", "+ "date : "+date);
 	}
 	
 	public void setAccountAmountwithYN(Scanner input) {
@@ -31,11 +36,5 @@ public class Daily extends Account {
 			}
 		}
 	}
-	
-	public void printInfo() {
-		String akind = getKindString();
-		System.out.println("kind : "+akind +", "+"number : "+number+", "+ "amount : "+amount +", "
-		+"detail content : "+content+", "+ "date : "+date);
-	}
-}
 
+}

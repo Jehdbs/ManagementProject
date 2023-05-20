@@ -3,5 +3,6 @@ package Account;
 public enum AccountType {
 	DAILY,
 	FOOD,
-	STUDY	
+	STUDY,
+	WEAR
 }
