@@ -5,4 +5,5 @@ public enum AccountType {
 	FOOD,
 	STUDY,
 	WEAR
+	
 }

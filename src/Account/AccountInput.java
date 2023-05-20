@@ -29,4 +29,5 @@ public interface AccountInput {
 	public void setDate(Scanner input);
 	
 	public String getKindString();
+	
 }

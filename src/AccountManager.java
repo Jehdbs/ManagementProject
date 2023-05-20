@@ -12,6 +12,7 @@ import Account.Wear;
 
 public class AccountManager {
 		ArrayList<AccountInput> accounts = new ArrayList<AccountInput>();
+		
 		Scanner input;
 		AccountManager(Scanner input){
 		this.input = input;

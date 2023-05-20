@@ -28,6 +28,7 @@ public abstract class Account implements AccountInput{
 		this.content = content;
 		this.date = date;
 	}
+	
 	public Account(AccountType kind, int number, String amount, String content, String date) {
 		this.kind  = kind;
 		this.number = number;

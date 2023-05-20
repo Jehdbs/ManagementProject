@@ -6,6 +6,7 @@ public class Study extends Account {
 	public Study(AccountType kind) {
 		super(kind);
 	}
+	
 	public void getUserInput(Scanner input) { 
 		setNumber(input);
 		setAccountAmountwithYN(input);

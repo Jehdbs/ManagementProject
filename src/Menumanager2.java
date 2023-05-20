@@ -13,7 +13,7 @@ public class Menumanager2 {
 		int num = -1;
 		
 		while(num != 5) {
-			try { //exception
+			try { 
 				showMenu();
 				num = input.nextInt();	
 				switch(num) {

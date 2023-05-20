@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Daily extends Account {	
 	public Daily(AccountType kind) {
-		super(kind);
+		super(kind);		
 	}
 	
 	public void getUserInput(Scanner input) { 

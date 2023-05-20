@@ -2,8 +2,7 @@ package Account;
 
 import java.util.Scanner;
 
-public abstract class Necesseties extends Account {
-	
+public abstract class Necesseties extends Account {	
 	public Necesseties(AccountType kind) {
 		super(kind);
 	}
