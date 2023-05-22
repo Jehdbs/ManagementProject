@@ -99,7 +99,6 @@ public abstract class Account implements AccountInput{
 			} catch (AmountFormatException e) {
 				System.out.println("Incorrect Amount Format. "
 						+ "put amount adress that contains 원");
-				e.printStackTrace();
 			}
 		}
 	}
