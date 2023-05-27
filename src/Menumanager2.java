@@ -18,6 +18,10 @@ public class Menumanager2 {
 		if(accountManager == null) {
 				accountManager = new AccountManager(input);  
 		}
+		else {
+			accountManager.input = input;
+		}
+		
 		selectMenu(input, accountManager);
 		putObject(accountManager, "accountManager.ser");
 	}
