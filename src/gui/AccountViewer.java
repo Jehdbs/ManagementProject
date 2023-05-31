@@ -8,6 +8,7 @@ import javax.swing.table.DefaultTableModel;
 public class AccountViewer extends JFrame{
 	
 	public AccountViewer() {
+		
 		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("NUMBER");
 		model.addColumn("AMOUNT");
