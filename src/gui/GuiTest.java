@@ -6,7 +6,6 @@ public class GuiTest {
 		MenuSelection menuselection = new MenuSelection();
 		Earning earning = new Earning();
 		AccountViewer accountViewer = new AccountViewer();
-		
 	}
 
 }
