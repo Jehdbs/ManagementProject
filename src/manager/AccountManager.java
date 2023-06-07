@@ -1,8 +1,10 @@
+package manager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import Account.Account;
 import Account.AccountInput;
 import Account.AccountType;
 import Account.Daily;
@@ -135,6 +137,14 @@ public class AccountManager implements Serializable{
 		for(int i=0; i<accounts.size(); i++){
 			accounts.get(i).printInfo();}
 	}	
+	
+	public int size() {
+		return accounts.size();
+	}
+	
+	public AccountInput get(int index) {
+		return (Account) accounts.get(index);
+	}
 	
 	public void showEditMenu() {
 		System.out.println("** Accountbook Indo Edit Menu **");

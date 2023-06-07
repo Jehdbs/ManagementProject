@@ -8,6 +8,12 @@ public interface AccountInput {
 	
 	public int getNumber();
 	
+	public String getAmount();
+	
+	public String getContent();
+	
+	public String getDate();
+	
 	public void setAmount(String amount) throws AmountFormatException;
 	
 	public void setContent(String content);
