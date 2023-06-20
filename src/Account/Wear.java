@@ -8,8 +8,32 @@ public class Wear extends Necesseties {
 	}
 	
 	public void getUserInput(Scanner input) {
-		setNumber(input);
-		setAccountAmountwithYN(input);
-		setDate(input);
+		setAccountNumber(input);
+		setAmountwithYN(input);
+		setAccountDate(input);
+	}
+
+	@Override
+	public void setAccountNumber(Scanner input) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setAccountAmount(Scanner input) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setAccountContent(Scanner input) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setAccountDate(Scanner input) {
+		// TODO Auto-generated method stub
+		
 	}
 }

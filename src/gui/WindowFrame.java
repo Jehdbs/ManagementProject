@@ -6,32 +6,30 @@ import javax.swing.JPanel;
 import manager.AccountManager;
 
 public class WindowFrame extends JFrame{
-
-	AccountManager accountManager;	
+	AccountManager accountManager;
 	MenuSelection menuselection;
-	Earning earning;
-	AccountViewer accountViewer;
-
-		
-	public WindowFrame(AccountManager accountmanager) {
-		
-		this.setSize(500, 300);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setTitle("My Frame");
-		
-		this.accountManager = accountmanager;
-		this.menuselection = new MenuSelection(this);
-		this.earning = new Earning(this);
-		this.accountViewer = new AccountViewer(this, this.accountManager);
-		
-		this.setupPanel(menuselection);
-		this.setVisible(true);
-	}
+	AccountAdder accountadder;
+	AccountViewer accountviewer;
+	private AccountAdder earning;
 
 	
+	public WindowFrame(AccountManager accountManager) {
+		this.setSize(500,300);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		
+		this.accountManager = accountManager;
+		this.menuselection = new MenuSelection(this);
+		this.earning = new AccountAdder(this, accountManager);
+		this.accountviewer = new AccountViewer(this,this.accountManager);
+
+		this.setupPanel(menuselection);
+		this.setVisible(true);
+
+	}
 	public void setupPanel(JPanel panel) {
 		this.getContentPane().removeAll();
-		this.add(panel);
+		this.getContentPane().add(panel);
 		this.revalidate();
 		this.repaint();
 	}
@@ -39,29 +37,19 @@ public class WindowFrame extends JFrame{
 	public MenuSelection getMenuselection() {
 		return menuselection;
 	}
-
-
 	public void setMenuselection(MenuSelection menuselection) {
 		this.menuselection = menuselection;
 	}
-
-
-	public Earning getEarning() {
-		return earning;
+	public AccountAdder getAccountadder() {
+		return accountadder;
 	}
-
-
-	public void setEarning(Earning earning) {
-		this.earning = earning;
+	public void setAccountadder(AccountAdder accountadder) {
+		this.accountadder = accountadder;
 	}
-
-
-	public AccountViewer getAccountViewer() {
-		return accountViewer;
+	public AccountViewer getAccountviewer() {
+		return accountviewer;
 	}
-
-
-	public void setAccountViewer(AccountViewer accountViewer) {
-		this.accountViewer = accountViewer;
+	public void setAccountviewer(AccountViewer accountviewer) {
+		this.accountviewer = accountviewer;
 	}
 }

@@ -2,38 +2,42 @@ package Account;
 
 import java.util.Scanner;
 
+import exceptions.AmountFormatException;
+
 public abstract class Necesseties extends Account {	
 	public Necesseties(AccountType kind) {
 		super(kind);
 	}
-	
-	@Override
+
 	public abstract void getUserInput(Scanner input);
 
-	@Override
 	public void printInfo() {
-		String akind = getKindString();
-		System.out.println("kind : "+akind +", "+"number : "+number+", "+ "amount : "+amount +", "
-		+"detail content : "+content+", "+ "date : "+date);
+		String skind = getKindString();
+		System.out.println("kind: " + skind + " number : "+number +" amount : "+amount +" "+ " content : "+content+" " + " date : "+date);
 	}
-	
-	public void setAccountAmountwithYN(Scanner input) {
+
+	public void setAmountwithYN(Scanner input) {
 		char answer = 'X';
 		while (answer != 'y'&&answer != 'Y'&&answer != 'n'&&answer != 'N') {
 			System.out.print("수익이 있습니까? (Y/N)");
 			answer = input.next().charAt(0);
-			if(answer == 'Y' || answer == 'y') {
-				setAmount(input);
-				setDetailContent(input);
-				break;
+			try {
+				if(answer == 'Y' || answer == 'y') {
+					setAccountAmount(input);
+					setAccountContent(input);
+					break;
+				}
+				else if (answer == 'N' || answer == 'n') {
+					this.setAmount("");
+					this.setContent("");
+					break;
+				}
+				else {
+				}
 			}
-			else if (answer == 'N' || answer == 'n') {
-				this.setContent("");
-				break;
-			}
-			else {			
+			catch(AmountFormatException e) {
+				System.out.println("Incorrect Amount Format. put the amount that contains '원'");
 			}
 		}
 	}
-
 }

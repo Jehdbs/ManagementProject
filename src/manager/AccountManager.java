@@ -16,52 +16,60 @@ public class AccountManager implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -7928699798051246331L;
-
+	private static final long serialVersionUID = 3315605092441589012L;
+	
 	ArrayList<AccountInput> accounts = new ArrayList<AccountInput>();
 	transient Scanner input;
 	AccountManager(Scanner input){
-	this.input = input;
+		this.input = input;
 	}
-			
+	public void earning(String number, String amount, String content, String Date) {
+		AccountInput accountInput = new Daily(AccountType.DAILY);
+		accountInput.getUserInput(input);
+		accounts.add(accountInput);
+	}
+	
+	public void earning(AccountInput accountInput) {
+		accounts.add(accountInput);
+	}
+
 	public void earning() {
 		int kind = 0;
 		AccountInput accountInput;
-		while (kind !=1 && kind !=2 && kind !=3 && kind !=4) {
+		while(kind<1 || kind>4) {
 			try {
-				System.out.println("1. For Daily ");
-				System.out.println("2. For Food ");
-				System.out.println("3. For Study ");
-				System.out.println("4. For Wear ");			
-				System.out.print("Select Account Type num between 1, 2, 3, 4 : ");
+				System.out.println("1 for Daily ");
+				System.out.println("2 for Wear ");
+				System.out.println("3 for Food ");
+				System.out.println("4 for Study ");
+				System.out.print("Select num for Account Kind between 1,2,3,4 : ");
 				kind = input.nextInt();
-				if (kind == 1) {
+				if(kind==1) {
 					accountInput = new Daily(AccountType.DAILY);
 					accountInput.getUserInput(input);
 					accounts.add(accountInput);
 					break;
-				
 				}
-				else if (kind == 2) {
-					accountInput = new Food(AccountType.FOOD);
-					accountInput.getUserInput(input);
-					accounts.add(accountInput);
-					break;
-				}
-				else if (kind == 3) {
-					accountInput = new Study(AccountType.STUDY);
-					accountInput.getUserInput(input);
-					accounts.add(accountInput);
-					break;
-				}
-				else if (kind == 4) {
+				else if(kind==2) {
 					accountInput = new Wear(AccountType.WEAR);
 					accountInput.getUserInput(input);
 					accounts.add(accountInput);
 					break;
 				}
+				else if(kind==3) {
+					accountInput = new Food(AccountType.FOOD);
+					accountInput.getUserInput(input);
+					accounts.add(accountInput);
+					break;
+				}
+				else if(kind==4) {
+					accountInput = new Study(AccountType.STUDY);
+					accountInput.getUserInput(input);
+					accounts.add(accountInput);
+					break;
+				}
 				else {
-					System.out.print("Account Type num(1 or 2 or 3 or 4) : ");
+					System.out.print("Select num for Account Kind between 1,2,3,4: ");
 				}
 			}
 			catch(InputMismatchException e) {
@@ -73,14 +81,13 @@ public class AccountManager implements Serializable{
 			}
 		}
 	}
-	
+
 	public void delete() {
 		System.out.print("번호 : ");
 		int number = input.nextInt();
 		int index = findIndex(number);
-		removeFromAccount(index, number);
+		removefromAccount(index, number);
 	}
-	
 	public int findIndex(int number) {
 		int index = -1;
 		for(int i=0; i<accounts.size(); i++) {
@@ -91,11 +98,11 @@ public class AccountManager implements Serializable{
 		}
 		return index;
 	}
-	
-	public int removeFromAccount(int index, int number) {
-		if(index>=0) {
+
+	public int removefromAccount(int index, int number) {
+		if(index >= 0) {
 			accounts.remove(index);
-			System.out.println(number+"'s ammount is deleted");
+			System.out.println(number+"'s amount is deleted");
 			return 1;
 		}
 		else {
@@ -103,7 +110,7 @@ public class AccountManager implements Serializable{
 			return -1;
 		}
 	}
-	
+
 	public void editAccountbook() {
 		System.out.print("번호 : ");
 		int number = input.nextInt();
@@ -111,48 +118,47 @@ public class AccountManager implements Serializable{
 			AccountInput account = accounts.get(i);
 			if(account.getNumber()==number) {
 				int num = -1;
-				while(num !=4) {
+				while(num != 4) {
 					showEditMenu();
 					num = input.nextInt();
 					switch(num) {
 					case 1:
-						account.setAmount(input);
+						account.setAccountAmount(input);
 						break;
 					case 2:
-						account.setContent(input);
+						account.setAccountContent(input);
 						break;
 					case 3:
-						account.setDate(input);
+						account.setAccountDate(input);
 						break;
-					default:
+					default :
 						continue;
 					}
 				}
-					break;
+				break;
 			}
 		}
-	}		
-
-	public void viewAccountbook() {
-		for(int i=0; i<accounts.size(); i++){
-			accounts.get(i).printInfo();}
-	}	
+	}
+	public void viewAccountbooks() {
+		for(int i=0; i<accounts.size(); i++) {
+			accounts.get(i).printInfo();
+		}
+	}
 	
 	public int size() {
 		return accounts.size();
 	}
 	
 	public AccountInput get(int index) {
-		return (Account) accounts.get(index);
+		return accounts.get(index);
 	}
-	
+
 	public void showEditMenu() {
-		System.out.println("** Accountbook Indo Edit Menu **");
+		System.out.println("** Accountbook Info Edit Menu **");
 		System.out.println("1. Edit amount");
 		System.out.println("2. Edit content");
 		System.out.println("3. Edit date");
 		System.out.println("4. Exit");
-		System.out.println("Select one number between 1~4 : ");
+		System.out.print("Select one number between 1~4 : ");
 	}
 }
-

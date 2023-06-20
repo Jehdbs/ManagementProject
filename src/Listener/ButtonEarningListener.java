@@ -5,23 +5,20 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import gui.AccountAdder;
 import gui.AccountViewer;
 import gui.WindowFrame;
 
-public class ButtonViewListener implements ActionListener {
-
+public class ButtonEarningListener implements ActionListener{
+	
 	WindowFrame frame;
 	
-	public ButtonViewListener(WindowFrame frame) {
+	public ButtonEarningListener(WindowFrame frame) {
 		this.frame = frame;
 	}
-
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton b = (JButton) e.getSource();
-		AccountViewer viewer = frame.getAccountviewer();
-		frame.setupPanel(viewer);
-
+		AccountViewer adder = frame.getAccountviewer();
+		frame.setupPanel(adder);
 	}
-
 }
