@@ -13,7 +13,7 @@ import exceptions.AmountFormatException;
 import gui.WindowFrame;
 import manager.AccountManager;
 
-public class AccountAdderListener implements ActionListener {
+public class AccountAdderListener implements ActionListener{
 	JTextField fieldNumber;
 	JTextField fieldAmount;
 	JTextField fieldContent;

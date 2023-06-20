@@ -13,7 +13,7 @@ public class ButtonEarningListener implements ActionListener{
 	
 	WindowFrame frame;
 	
-	public ButtonEarningListener(WindowFrame frame) {
+	public ButtonEarningListener(WindowFrame frame){
 		this.frame = frame;
 	}
 	public void actionPerformed(ActionEvent e) {

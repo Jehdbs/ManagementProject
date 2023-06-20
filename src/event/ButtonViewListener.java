@@ -31,7 +31,7 @@ public class ButtonViewListener implements ActionListener{
 		frame.repaint();
 	}
 	
-	public static AccountManager getObject(String filename) {
+	public static AccountManager getObject(String filename){
 		AccountManager accountManager = null;
 		try {
 			FileInputStream file = new FileInputStream(filename);

@@ -3,7 +3,7 @@ package Account;
 import java.util.Scanner;
 
 public class Wear extends Necesseties {
-	public Wear(AccountType kind) {
+	public Wear(AccountType kind){
 		super(kind);
 	}
 	

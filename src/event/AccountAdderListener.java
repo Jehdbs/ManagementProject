@@ -62,7 +62,7 @@ public class AccountAdderListener implements ActionListener{
 			out.close();
 			file.close();
 
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e){
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {

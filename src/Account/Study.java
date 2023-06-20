@@ -5,7 +5,7 @@ import java.util.Scanner;
 import exceptions.AmountFormatException;
 
 public class Study extends Account {
-	public Study(AccountType kind) {
+	public Study(AccountType kind){
 		super(kind);
 	}
 	

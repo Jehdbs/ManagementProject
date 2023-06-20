@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import gui.AccountAdder;
 import gui.AccountViewer;
 import gui.WindowFrame;
 
@@ -12,7 +13,7 @@ public class AccountAdderCancelListener implements ActionListener{
 	
 	WindowFrame frame;
 	
-	public AccountAdderCancelListener(WindowFrame frame) {
+	public AccountAdderCancelListener(WindowFrame frame){
 		this.frame = frame;
 	}
 	public void actionPerformed(ActionEvent e) {

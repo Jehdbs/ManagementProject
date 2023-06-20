@@ -99,7 +99,7 @@ public class AccountManager implements Serializable{
 		return index;
 	}
 
-	public int removefromAccount(int index, int number) {
+	public int removefromAccount(int index, int number){
 		if(index >= 0) {
 			accounts.remove(index);
 			System.out.println(number+"'s amount is deleted");

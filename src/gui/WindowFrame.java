@@ -27,7 +27,7 @@ public class WindowFrame extends JFrame{
 		this.setVisible(true);
 
 	}
-	public void setupPanel(JPanel panel) {
+	public void setupPanel(JPanel panel){
 		this.getContentPane().removeAll();
 		this.getContentPane().add(panel);
 		this.revalidate();

@@ -1,6 +1,6 @@
 package Account;
 
-public enum AccountType {
+public enum AccountType{
 	DAILY,
 	FOOD,
 	STUDY,

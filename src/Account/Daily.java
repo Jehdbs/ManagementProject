@@ -3,7 +3,7 @@ package Account;
 import java.util.Scanner;
 
 public class Daily extends Account {	
-	public Daily(AccountType kind) {
+	public Daily(AccountType kind){
 		super(kind);		
 	}
 	

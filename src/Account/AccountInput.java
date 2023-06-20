@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import exceptions.AmountFormatException;
 
-public interface AccountInput {
+public interface AccountInput{
 
 	public int getNumber();
 

@@ -14,7 +14,7 @@ public class MenuSelection extends JPanel {
 	
 	WindowFrame frame;
 	
-	public MenuSelection(WindowFrame frame) {
+	public MenuSelection(WindowFrame frame){
 		this.frame = frame;
 		
 		this.setLayout(new BorderLayout());

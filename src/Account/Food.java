@@ -3,7 +3,7 @@ package Account;
 import java.util.Scanner;
 
 public class Food extends Necesseties {
-	public Food(AccountType kind) {
+	public Food(AccountType kind){
 		super(kind);
 	}
 	

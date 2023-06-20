@@ -19,7 +19,7 @@ public abstract class Account implements AccountInput, Serializable{
 	public Account() {
 	}
 	
-	public Account(AccountType kind) {
+	public Account(AccountType kind){
 		this.kind = kind;
 	}
 	
